@@ -1,0 +1,48 @@
+<nav id="Navbar" class="navbar navbar-expand-lg navbar-dark " style="background-color: #323754;">
+<div class="container-fluid">
+  <button class="navbar-toggler" type="button" data-bs-toggle='collapse' data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+        <div class=" navbar-nav">
+
+       <div class=" text-light  pt-2 pb-2 " style="padding-right: 7.6em; margin-left: 3em;" ><a href="/" style="text-decoration:none; color:honeydew;"><b>StratShare</b></a> </div>
+            
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item  active mx-5">
+            <a class="nav-link" href="/reviews" >Home<span class="sr-only"></span> </a>
+          </li>
+          <li class="nav-item mx-5">
+            <a class="nav-link" href="/reviews/new">Create Post</a>
+          </li>
+          <li class="nav-item mx-5">
+            <a class="nav-link" href="/reviews/draft">Draft</a>
+          </li>
+        </ul>
+  
+        </div>
+    </div>
+
+        <div class="d-flex justify-content-between mx-5" >
+          <% if(currentUser){ %> 
+            <span style="color: rgb(241, 241, 34);" class="mt-1"> <%= currentUser.username  %> </span>
+            <form action="/logout">  
+              <button class="btn btn-outline-danger mx-3 btn-sm">Logout</button>
+            </form>
+            <% } %> 
+           <% if(!currentUser) {%>  
+
+          <form action="/login">  
+          <button class="btn btn-danger ">Login</button>
+        </form>
+          <form action="/register">
+          <button class="btn btn-outline-warning mx-2">Register</button>
+        </form>
+         <% } %> 
+
+        </div>
+    </div>
+</nav>
+
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script  src="/js/jquery.js"></script> 
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Document</title>
+
+<style>
+
+body{
+  /*
+  background-image: url("https://images.unsplash.com/photo-1472803828399-39d4ac53c6e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTB8NDkxODM2fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60"); 
+  
+ background-size: cover;
+ background-attachment: fixed;
+*/    
+background-color: #f3f3f3;
+}
+
+#fullBlog{
+background-color: white;   
+width:72%;
+margin-top: 3em;
+box-shadow: 0 1px 1px 0 rgb(159 167 194 / 40%);
+}
+
+@media screen and (max-width: 1000px) {
+  #fullBlog {
+    width: 90%;
+  }
+}
+
+
+#blogTitles{
+  font-family:   'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 1.2em;
+    font-size: 30px;
+    display: block;  
+   text-align: center;
+}
+
+#blogAuthors{
+  display: block; 
+  margin-bottom: 1.2em;
+  font-family: 'Segoe UI';
+  font-size: 14px; 
+  color: rgb(131, 131, 134);
+}
+#blogContents{
+   height:140px;
+   overflow: hidden;
+   color: #000000d8;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    font-size: 16px;
+}
+#blogTagss{
+   margin-top: 1.2em;
+   padding-bottom: 1.4em;
+   font-size: 13px; 
+   color: rgb(131, 131, 134);
+}
+</style>
+
+</head>
+<body>
+  
+  <%- include('../partials/navbar') %>
+
+
+
+<div class=" row">
+
+ <div class="col-md-0 col-lg-3 col-xl-3" >
+  
+  <section class=" gradient-custom">
+    <div class="container mt-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-10 col-xl-8 ">
+          <div class="card text-white" style="border-radius: 1rem; background-color: white; box-shadow: 0 1px 1px 0 rgb(159 167 194 / 40%);">
+            <div class="card-body p-2 text-center">
+  
+              <div class="md-5 mt-md-4 ">
+  
+                <form action="/reviews/filter" method="POST">
+                <h3 class="  text-uppercase" style="color:black;">Filter</h3>
+                <p class="text-white-50 mb-4"></p>
+ 
+                <div class="px-3">
+                <div class="form-outline form-white mb-4" >
+                  <input type="text" id="username" name="username" class="form-control form-control-sm" placeholder="Username" style=" border-color: black;"/>
+                </div>
+                <div class="form-outline form-white mb-4" >
+                  <input type="text" id="tag" name="tag" class="form-control form-control-sm" placeholder="Tag" style=" border-color: black;"/>
+                </div>
+               </div>
+
+                <button class="btn btn-outline-light btn-lg px-3 btn-sm mb-2" type="submit" style="color:rgb(136, 136, 241); border-color: rgb(136, 136, 241);">Apply</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+ </div> 
+
+
+ <div class="col-md-12 col-lg-9 col-xl-9" >
+
+<% let countBlog=0 %> 
+
+<% for(let review of reviews){ %> 
+
+<% countBlog++ %> 
+
+  <div class="container border-1 text-dark mb-5"  id="fullBlog">
+    
+        <div class="container">          
+
+    <div id="blogTitles"><%=  review.title %></div>
+  <div id="blogAuthors" class="mt-2"> <span >Written by</span> <b> <%= review.author  %>  </b>, <span ><%=review.publishDate%></span>  </div>
+
+  <div id="blogContents"> <%- review.content %> </div>
+
+  <div class="pt-3" id="blogContinues"><a href="/reviews/<%= review._id %>">Continue reading</a></div>
+
+  <div id="blogTagss">
+    Tags:
+    <% for(let tag of review.tag){ %> 
+     #<%=tag%> 
+     <% } %> 
+  </div>
+
+
+  </div>
+  
+  </div>
+
+<% } %> 
+
+
+<% if(countBlog == 0){ %> 
+  <div class="d-flex justify-content-center" style="height: 200px; margin-top:14.3em ;"> Oops! Nothing to show</div>
+<% } %> 
+  
+
+
+</div>
+
+
+
+</div>
+ 
+<div class="d-flex flex-column justify-content-end" style="height:300px; background-color:#091e5c ;">
+  <div class="d-flex justify-content-center" style="height:50px; background-color:#05133c ;">
+    <div style="color: #999999; font-size: 15px; padding-top: 15px; ">©2022 StratShare All rights reserved</div>
+</div>
+</div>
+
+</body>
+</html>

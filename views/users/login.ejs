@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script  src="/js/jquery.js"></script> 
+    <script src="/js/bootstrap.min.js"></script>
+
+<style>
+  
+body{
+        height: 100vh;
+  background-image: url("https://media.istockphoto.com/photos/wood-table-top-on-blurred-of-counter-cafe-shop-with-light-for-or-picture-id924418708?k=20&m=924418708&s=612x612&w=0&h=dtmYnoc2NN3uBisSHP4m35cY4KVFtNJJvQfqrU1n4-s=");
+  background-size: cover;
+ background-position: center;
+}
+
+</style>
+
+    <title>Document</title>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+     
+       <section class=" gradient-custom">
+        <div class="container mt-5">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-10 col-md-7 col-lg-6 col-xl-4">
+              <div class="card text-white" style="border-radius: 1rem; background-color: rgba(0,0,0,0.84); ">
+                <div class="card-body p-5 text-center">
+      
+                  <div class="md-5 mt-md-4 pb-5">
+      
+                    <form action="/login" method="POST">
+                    <h2 class="fw-bold  text-uppercase">Login</h2>
+                    <p class="text-white-50 mb-5">Please enter your login and password!</p>
+      
+                    <div class="form-outline form-white mb-4">
+                      <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Username" />
+                    </div>
+      
+                    <div class="form-outline form-white mb-4">
+                      <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password"/>
+                      <label class="form-label" for="password">Password</label>
+                    </div>
+      
+                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                  </form>
+                  </div>
+                  <p class="mb-0">Don't have an account? <a href="/register" class="text-white-50 fw-bold">Sign Up</a></p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+</body>
+</html>
