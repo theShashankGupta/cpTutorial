@@ -2,8 +2,10 @@
 
 Welcome to CP Tutorials website repository! This project aims to create a platform for sharing articles, allowing users to save drafts, and enabling readers to comment on the posts. Here's an overview of the features and technologies used in this project.
 
-##Images
+## Images
 <img width="960" alt="blog" src="https://github.com/theShashankGupta/cpTutorial/assets/106386615/51b0a717-028a-438d-a8d7-5363a21dd630">
+<img width="960" alt="image" src="https://github.com/theShashankGupta/cpTutorial/assets/106386615/6c831018-ebe1-4722-839d-77a64903b7b8">
+<img width="960" alt="image" src="https://github.com/theShashankGupta/cpTutorial/assets/106386615/6b4d2e30-556f-4b92-a8ee-225fcc96e26b">
 
 
 ## Features
