@@ -2,6 +2,10 @@
 
 Welcome to CP Tutorials website repository! This project aims to create a platform for sharing articles, allowing users to save drafts, and enabling readers to comment on the posts. Here's an overview of the features and technologies used in this project.
 
+##Images
+<img width="960" alt="blog" src="https://github.com/theShashankGupta/cpTutorial/assets/106386615/51b0a717-028a-438d-a8d7-5363a21dd630">
+
+
 ## Features
 
 - User registration and authentication system.
