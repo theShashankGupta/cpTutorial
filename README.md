@@ -33,20 +33,20 @@ Welcome to CP Tutorials website repository! This project aims to create a platfo
 
 - Frontend:
   - HTML, CSS, JavaScript
-  - [Framework]- Bootstrap
+  - Framework- Bootstrap
 - Backend:
   - Node.js, Express.js
-  - [Database]MongoDB
-  - [Authentication] (Passport)
+  - Database-MongoDB
+  - Authentication- Passport
 - Deployment and Hosting:
-  - [Platform] (Cyclic)
+  - Platform- Cyclic
   - Live Link- https://odd-ruby-gorilla-wear.cyclic.app/
 
 ## Getting Started
 
 To get started with the project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/my-blog-website.git`
+1. Clone the repository: `git clone https://github.com/theShashankGupta/cpTutorial.git`
 2. Install the necessary dependencies: `npm install` or `yarn install`
 3. Set up the backend server and configure the database.
 4. Start the development server: `npm start` or `yarn start`
